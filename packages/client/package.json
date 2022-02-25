@@ -1,0 +1,31 @@
+{
+	"name": "@hypermc/client",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/types/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"require": "./dist/cjs/index.js",
+			"import": "./dist/esm/index.js",
+			"types": "./dist/types/index.d.js"
+		}
+	},
+	"scripts": {
+		"build:dev": "swc src -d dist/esm --config-file ../../.swcrc",
+		"build:prod": "concurrently -n esm,cjs,tsc -c yellow,green,blue \"npm:build:esm\" \"npm:build:cjs\" \"npm:build:types\"",
+		"build:esm": "swc src -d dist/esm --config-file ../../.swcrc -C module.type=es6",
+		"build:cjs": "swc src -d dist/cjs --config-file ../../.swcrc -C module.type=commonjs -C jsc.target=es5",
+		"build:types": "tsc --emitDeclarationOnly",
+		"publish": "npm publish"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"api": "*",
+		"axios": "^0.25.0"
+	},
+	"devDependencies": {}
+}

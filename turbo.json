@@ -1,14 +1,23 @@
 {
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
-    },
-    "lint": {
-      "outputs": []
-    },
-    "dev": {
-      "cache": false
-    }
-  }
+	"$schema": "https://turborepo.org/schema.json",
+	"pipeline": {
+		"build:prod": {
+			"dependsOn": ["^build:prod"],
+			"outputs": ["dist/**", ".next/**"]
+		},
+		"test": {
+			"dependsOn": ["^test"],
+			"outputs": []
+		},
+		"dev": {
+			"cache": false
+		},
+		"publish": {
+			"dependsOn": ["^publish", "build:prod"]
+		},
+		"deploy": {
+			"dependsOn": ["build:prod", "test", "publish"],
+			"cache": false
+		}
+	}
 }
