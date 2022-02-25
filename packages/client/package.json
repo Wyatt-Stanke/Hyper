@@ -19,7 +19,7 @@
 		"build:esm": "swc src -d dist/esm --config-file ../../.swcrc -C module.type=es6",
 		"build:cjs": "swc src -d dist/cjs --config-file ../../.swcrc -C module.type=commonjs -C jsc.target=es5",
 		"build:types": "tsc --emitDeclarationOnly",
-		"publish": "npm publish"
+		"publish": "npm publish --access=public"
 	},
 	"author": "",
 	"license": "ISC",
