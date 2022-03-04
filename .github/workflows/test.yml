@@ -6,7 +6,7 @@ jobs:
     strategy:
       matrix:
         runs-on: [ubuntu-latest, macos-latest, windows-latest]
-        node: [10, 12, 14, 16]
+        node: [12, 14, 16]
     runs-on: ${{ matrix.runs-on }}
     steps:
       - name: Checkout
