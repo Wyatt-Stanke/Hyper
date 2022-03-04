@@ -24,8 +24,8 @@ class HypixelAPIKey {
 		}
 
 		// Test if the key is valid by checking if it can be used to make a request.
-		// eslint-disable-next-line @typescript-eslint/no-floating-promises
-		let response = await axios.get(
+
+		const response = await axios.get(
 			`https://api.hypixel.net/key?key=${this.key}`
 		);
 		return response.status === 200;

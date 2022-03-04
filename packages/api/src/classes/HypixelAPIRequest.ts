@@ -5,12 +5,12 @@ class HypixelAPIRequest {
 	static baseURL = "https://api.hypixel.net";
 	apiKey: HypixelAPIKey;
 	path: string;
-	parameters: { [key: string]: number | string };
+	parameters: Record<string, number | string>;
 
 	constructor(options: {
 		apiKey: HypixelAPIKey;
 		path: string;
-		parameters: { [key: string]: number | string };
+		parameters: Record<string, number | string>;
 	}) {
 		this.path = options.path;
 		this.parameters = options.parameters;

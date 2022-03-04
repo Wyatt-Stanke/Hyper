@@ -1,7 +1,6 @@
+import axios from "axios";
 import HypixelAPIAgent from "../src/classes/HypixelAPIAgent";
 import HypixelAPIKey from "../src/classes/HypixelAPIKey";
-
-import axios from "axios";
 
 describe("HypixelAPIAgent class", () => {
 	describe("HypixelAPIAgent as static", () => {
@@ -53,6 +52,8 @@ describe("HypixelAPIAgent class", () => {
 					path: "key",
 					parameters: {}
 				});
+
+				expect(request.status).toBe(200);
 			});
 
 			it("make a request (multiple parameters)", async () => {

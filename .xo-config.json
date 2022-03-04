@@ -1,10 +1,13 @@
 {
 	"rules": {
 		"quotes": [2, "double"],
+		"max-nested-callbacks": [2, 5],
 		"@typescript-eslint/naming-convention": [0],
+		"@typescript-eslint/no-floating-promises": [0],
 		"unicorn/filename-case": [0],
 		"import/extensions": [0],
-		"import/no-cycle": [0]
+		"import/no-cycle": [0],
+		"node/prefer-global/process": [0]
 	},
 	"prettier": true
 }

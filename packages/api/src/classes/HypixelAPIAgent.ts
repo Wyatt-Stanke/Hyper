@@ -24,7 +24,7 @@ import HypixelAPIKey from "./HypixelAPIKey";
  * @static {string} baseURL - The base URL for the Hypixel API.
  */
 class HypixelAPIAgent {
-	static baseURL: string = "https://api.hypixel.net";
+	static baseURL = "https://api.hypixel.net";
 	apiKey: HypixelAPIKey;
 
 	constructor(options: { apiKey: HypixelAPIKey }) {
@@ -33,7 +33,7 @@ class HypixelAPIAgent {
 
 	async send(options: {
 		path: string;
-		parameters: { [key: string]: number | string };
+		parameters: Record<string, number | string>;
 	}) {
 		return new HypixelAPIRequest({
 			path: options.path,

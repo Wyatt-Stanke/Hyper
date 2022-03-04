@@ -21,11 +21,19 @@
 		"build:types": "tsc --emitDeclarationOnly",
 		"publish": "npm publish --access=public"
 	},
-	"author": "",
+	"author": "Hyper Labs",
 	"license": "ISC",
 	"dependencies": {
-		"api": "*",
-		"axios": "^0.25.0"
+		"@hypermc/api": "*",
+		"axios": "^0.25.0",
+		"find-up": "^6.3.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Wyatt-Stanke/hyper.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Wyatt-Stanke/hyper/issues"
 	},
 	"devDependencies": {}
 }

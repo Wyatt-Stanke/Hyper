@@ -1,0 +1,1 @@
+<img src="https://github.com/Wyatt-Stanke/hyper/blob/main/assets/hyper-logo-client.svg" alt="hyper logo" />
