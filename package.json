@@ -13,6 +13,7 @@
 		"dev": "turbo run dev --parallel --no-cache",
 		"lint": "xo --fix",
 		"test": "source .env && turbo run test --no-cache",
+		"test:ci": "turbo run test --no-cache",
 		"format": "prettier --write \"**/*.{js,jsx,cjs,mjs,ts,tsx,json}\"",
 		"release": "npm run build && changeset publish"
 	},

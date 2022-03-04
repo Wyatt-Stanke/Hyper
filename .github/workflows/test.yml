@@ -23,6 +23,6 @@ jobs:
         run: npm ci
 
       - name: Package Testing
-        run: npm test
+        run: npm run test:ci
         env:
           HYPIXEL_API_KEY: ${{ secrets.HYPIXEL_API_KEY }}
