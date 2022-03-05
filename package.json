@@ -13,6 +13,7 @@
 		"dev": "turbo run dev --parallel --no-cache",
 		"lint": "xo --fix",
 		"test": "source .env && turbo run test --no-cache",
+		"test:ci": "turbo run test --no-cache",
 		"format": "prettier --write \"**/*.{js,jsx,cjs,mjs,ts,tsx,json}\"",
 		"release": "npm run build && changeset publish"
 	},
@@ -26,7 +27,6 @@
 		"@types/prettier": "^2.4.4",
 		"@types/xo": "^0.39.2",
 		"concurrently": "^7.0.0",
-		"danger": "^11.0.2",
 		"dotenv": "^16.0.0",
 		"eslint-config-prettier": "^8.3.0",
 		"find-up": "^6.3.0",

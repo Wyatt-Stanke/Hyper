@@ -2,11 +2,11 @@ name: Package Testing
 on: pull_request
 
 jobs:
-  danger:
+  test:
     strategy:
       matrix:
         runs-on: [ubuntu-latest, macos-latest, windows-latest]
-        node: [10, 12, 14, 16]
+        node: [12, 14, 16]
     runs-on: ${{ matrix.runs-on }}
     steps:
       - name: Checkout
@@ -15,12 +15,17 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup@v2
+        uses: actions/setup-node@v2
         with:
-          version: ${{ matrix.node }}
+          node-version: ${{ matrix.node }}
+
+      - name: Update NPM
+        run: npm install -g npm@latest
 
       - name: Install Dependencies
         run: npm ci
 
       - name: Package Testing
-        run: npm test
+        run: npm run test:ci
+        env:
+          HYPIXEL_API_KEY: ${{ secrets.HYPIXEL_API_KEY }}
